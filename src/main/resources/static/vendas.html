@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Loja Fácil - Registrar Venda</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para deixar a tela de vendas parecida com um PDV */
+        .painel-venda { display: flex; gap: 20px; }
+        .lado-esquerdo { flex: 1; }
+        .lado-direito { flex: 1; background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        .total-box { font-size: 2em; font-weight: bold; color: #28a745; text-align: right; margin-top: 20px; }
+        .tabela-scroll { max-height: 300px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">Loja Fácil - Caixa</div>
+        <div class="nav-links">
+            <a href="menu.html">Voltar ao Menu</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h2>Registrar Venda</h2>
+
+        <div class="painel-venda">
+            
+            <div class="lado-esquerdo">
+                <div class="form-container">
+                    
+                    <h3>1. Cliente</h3>
+                    <div class="input-group">
+                        <label>CPF do Cliente</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="cpfCliente" placeholder="000.000.000-00">
+                            <button type="button" class="btn-edit" id="btnBuscaCliente">🔍</button>
+                        </div>
+                        <small id="nomeClienteDisplay" style="color: #666; font-weight: bold;">Cliente não identificado</small>
+                    </div>
+
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+
+                    <h3>2. Adicionar Produto</h3>
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Código / Barras</label>
+                            <input type="text" id="codProduto" placeholder="Cód.">
+                        </div>
+                        <div class="input-group" style="flex: 2;">
+                            <label>Nome do Produto</label>
+                            <input type="text" id="nomeProduto" placeholder="Ex: Teclado" readonly>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Preço Unit. (R$)</label>
+                            <input type="number" id="precoUnitario" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Quantidade</label>
+                            <input type="number" id="quantidade" value="1" min="1">
+                        </div>
+                    </div>
+
+                    <button type="button" id="btnAdicionar" class="btn-save" style="width: 100%;">+ Adicionar Item</button>
+                </div>
+            </div>
+
+            <div class="lado-direito">
+                <h3>🛒 Carrinho de Compras</h3>
+                
+                <div class="tabela-scroll">
+                    <table id="tabelaItens">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Qtd</th>
+                                <th>Preço</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+
+                <div class="total-box">
+                    Total: R$ <span id="valorTotalVenda">0.00</span>
+                </div>
+
+                <div class="actions" style="margin-top: 20px;">
+                    <button type="button" id="btnFinalizar" class="btn-save">✅ Finalizar Venda</button>
+                    <button type="button" class="btn-delete" onclick="location.reload()">❌ Cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="venda-validador.js"></script>
+
+</body>
+</html>

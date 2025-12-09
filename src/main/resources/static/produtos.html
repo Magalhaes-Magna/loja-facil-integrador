@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Fácil - Produtos</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">Loja Fácil</div>
+        <div class="nav-links">
+            <a href="menu.html">Voltar ao Menu</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h2>Gerenciar Produtos</h2>
+
+        <div class="form-container">
+            <form id="formProduto">
+                <input type="hidden" id="idProduto">
+                
+                <div class="row">
+                    <div class="input-group">
+                        <label for="codigo">Código</label>
+                        <input type="text" id="codigo" placeholder="Automático" readonly>
+                    </div>
+                    <div class="input-group" style="flex: 3;"> <label for="nomeProduto">Produto</label>
+                        <input type="text" id="nomeProduto" placeholder="Nome do produto">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="descricao">Descrição</label>
+                    <input type="text" id="descricao" placeholder="Descrição detalhada">
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label for="quantidade">Quantidade Atual</label>
+                        <input type="number" id="quantidade" placeholder="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="qtdMinima">Quant. Mínima</label> <input type="number" id="qtdMinima" placeholder="5">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-group">
+                        <label for="precoCusto">Preço de Custo (R$)</label>
+                        <input type="number" step="0.01" id="precoCusto" placeholder="0,00">
+                    </div>
+                    <div class="input-group">
+                        <label for="precoVenda">Preço de Venda (R$)</label>
+                        <input type="number" step="0.01" id="precoVenda" placeholder="0,00">
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button type="submit" class="btn-save">Salvar</button>
+                    <button type="button" class="btn-clear" onclick="document.getElementById('formProduto').reset()">Limpar</button>
+                    <button type="button" class="btn-edit" style="background-color: #17a2b8;">Pesquisar</button> 
+                </div>
+            </form>
+        </div>
+
+        <div class="table-container">
+            <h3>Produtos em Estoque</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cód</th>
+                        <th>Produto</th>
+                        <th>Qtd</th>
+                        <th>Preço Venda</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Teclado USB</td>
+                        <td>15</td>
+                        <td>R$ 45,00</td>
+                        <td>
+                            <button class="btn-edit">Editar</button>
+                            <button class="btn-delete">Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    
+    <script src="produto-validador.js"></script>
+
+</body>
+</html>

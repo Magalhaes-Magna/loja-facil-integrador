@@ -1,0 +1,13 @@
+C:\Projetos\api\src\main\java\com\lojafacil\api\ApiApplication.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\config\CorsConfig.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\controller\ClienteController.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\controller\ProdutoController.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\controller\VendaController.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\model\Cliente.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\model\ItemVenda.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\model\Produto.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\model\Venda.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\repository\ClienteRepository.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\repository\ItemVendaRepository.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\repository\ProdutoRepository.java
+C:\Projetos\api\src\main\java\com\lojafacil\api\repository\VendaRepository.java

@@ -1,0 +1,218 @@
+/* Reset básico para tirar margens padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilizando o fundo da tela inteira */
+body {
+    background-color: #f0f2f5; /* Um cinza bem claro */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    height: 100vh;           /* Altura total da tela */
+}
+
+/* A "caixa" branca do login (seu JPanel) */
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 350px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Estilo dos Labels (Rótulos) */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Estilo das caixas de texto (JTextField e JPasswordField) */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none; /* Tira a borda azul padrão do navegador ao clicar */
+}
+
+/* Efeito ao clicar no campo */
+input:focus {
+    border-color: #007bff;
+}
+
+/* Estilo do Botão (JButton) */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+/* Efeito ao passar o mouse no botão */
+.btn-login:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+
+/* --- Estilos Adicionais para Dashboard e Clientes --- */
+
+/* Barra de Navegação */
+.navbar {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fica fixo no topo */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.brand { font-size: 1.5rem; font-weight: bold; }
+.btn-logout, .nav-links a { color: white; text-decoration: none; font-weight: bold; }
+.btn-logout:hover { text-decoration: underline; }
+
+/* Ajuste para o conteúdo não ficar escondido atrás da navbar */
+body { padding-top: 80px; align-items: flex-start; } 
+
+/* Dashboard (Menu) */
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.card {
+    background: white;
+    width: 250px;
+    height: 180px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-5px); background-color: #f9f9f9; }
+.card .icon { font-size: 3rem; margin-bottom: 10px; }
+
+/* Tela de Cadastro (Layout) */
+.main-content { width: 90%; max-width: 1000px; margin: 0 auto; }
+.form-container { background: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+.row { display: flex; gap: 20px; }
+.input-group { flex: 1; margin-bottom: 15px; }
+
+/* Botões */
+.actions { display: flex; gap: 10px; margin-top: 10px; }
+.btn-save { background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.btn-clear { background-color: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+.btn-save:hover { background-color: #218838; }
+
+/* Tabela */
+.table-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+th { background-color: #f1f1f1; }
+.btn-edit { background-color: #ffc107; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; margin-right: 5px; }
+.btn-delete { background-color: #dc3545; color: white; border: none; padding: 5px 10px; border-radius: 3px; cursor: pointer; }
+
+/* --- Estilos Específicos para Relatórios --- */
+
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+}
+
+.tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: #007bff;
+    background-color: #f8f9fa;
+}
+
+.tab-btn.active {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+    font-weight: bold;
+}
+
+/* Esconde as seções que não estão ativas */
+.report-section {
+    display: none;
+}
+
+/* Mostra a seção ativa com uma animação suave */
+.report-section.active {
+    display: block;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.resumo-box {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 1px solid #e9ecef;
+}
+
+.resumo-box span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.valor-destaque {
+    color: #28a745;
+    font-size: 1.3em;
+}

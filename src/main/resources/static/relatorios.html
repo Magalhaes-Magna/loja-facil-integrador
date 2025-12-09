@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Fácil - Relatórios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="brand">Loja Fácil - Relatórios</div>
+        <div class="nav-links">
+            <a href="menu.html">Voltar ao Menu</a>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="abrirAba(event, 'periodo')">📅 Vendas por Período</button>
+            <button class="tab-btn" onclick="abrirAba(event, 'cliente')">👤 Compras por Cliente</button>
+        </div>
+
+        <div id="periodo" class="report-section active">
+            <h3>Relatório de Vendas (Intervalo de Datas)</h3>
+            <div class="form-container">
+                <form id="formPeriodo">
+                    <div class="row">
+                        <div class="input-group">
+                            <label>Data Inicial</label>
+                            <input type="date" id="dataInicio">
+                        </div>
+                        <div class="input-group">
+                            <label>Data Final</label>
+                            <input type="date" id="dataFim">
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button type="button" class="btn-save" onclick="gerarRelatorioPeriodo()">Gerar Relatório</button>
+                        <button type="button" class="btn-clear" onclick="limparResultados()">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="cliente" class="report-section">
+            <h3>Histórico de Compras (Por Cliente)</h3>
+            <div class="form-container">
+                <form id="formClienteBusca">
+                    <div class="row">
+                        <div class="input-group">
+                            <label>CPF do Cliente</label>
+                            <input type="text" id="buscaCpf" placeholder="000.000.000-00">
+                        </div>
+                        <div class="input-group">
+                            <label>Ou Nome do Cliente</label>
+                            <input type="text" id="buscaNome" placeholder="Digite o nome">
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <button type="button" class="btn-save" onclick="gerarRelatorioCliente()">Pesquisar Histórico</button>
+                        <button type="button" class="btn-clear" onclick="limparResultados()">Limpar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-container" id="areaResultados" style="display: none;">
+            <h3 id="tituloResultado">Resultados</h3>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Venda</th>
+                        <th>Data</th>
+                        <th>Cliente</th>
+                        <th>Qtd Itens</th>
+                        <th>Total (R$)</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaCorpo">
+                    </tbody>
+            </table>
+
+            <div class="resumo-box">
+                <span>Qtd Vendas: <strong id="totalQtdVendas">0</strong></span>
+                <span>Total Itens: <strong id="totalQtdItens">0</strong></span>
+                <span>Valor Total: <strong id="totalValor" class="valor-destaque">0,00</strong></span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="relatorio-validador.js"></script>
+
+</body>
+</html>

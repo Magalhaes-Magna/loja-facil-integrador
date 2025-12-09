@@ -1,0 +1,13 @@
+com\lojafacil\api\controller\ClienteController.class
+com\lojafacil\api\repository\ProdutoRepository.class
+com\lojafacil\api\repository\ItemVendaRepository.class
+com\lojafacil\api\model\Venda.class
+com\lojafacil\api\ApiApplication.class
+com\lojafacil\api\repository\ClienteRepository.class
+com\lojafacil\api\repository\VendaRepository.class
+com\lojafacil\api\model\ItemVenda.class
+com\lojafacil\api\config\CorsConfig.class
+com\lojafacil\api\controller\ProdutoController.class
+com\lojafacil\api\model\Cliente.class
+com\lojafacil\api\model\Produto.class
+com\lojafacil\api\controller\VendaController.class
